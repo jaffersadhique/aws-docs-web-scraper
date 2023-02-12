@@ -7,7 +7,7 @@ export async function getPdfLinks(browser, url) {
   console.log(url);
   await page.waitForNetworkIdle();
   userLinks = await page.$$eval(
-    "#aws-element-254003e8-8375-4608-bc6b-9ea7d5df473b > div.aws-directories-container-wrapper > section > ul > li > div.m-card-container > div.m-card-main > div > div.m-desc > p > a:nth-child(2)",
+    "div.aws-directories-container-wrapper a[href*='pdf']",
     (list) => {
       return list.map((node) => node.getAttribute("href"));
     }
