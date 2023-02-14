@@ -4,7 +4,7 @@ import { getPdfLinks } from "./getPdfLinks.js";
 
 async function downloadAWSWhitePapers() {
   const browser = await puppeteer.launch({ headless: false });
-  let urls = Array.from({ length: 1 }, (_, i) => i + 1).map(
+  let urls = Array.from({ length: 19 }, (_, i) => i + 1).map(
     (value) =>
       `https://aws.amazon.com/whitepapers/?whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc&awsf.whitepapers-content-type=*all&awsf.whitepapers-global-methodology=*all&awsf.whitepapers-tech-category=*all&awsf.whitepapers-industries=*all&awsf.whitepapers-business-category=*all&awsm.page-whitepapers-main=${value}`
   );
